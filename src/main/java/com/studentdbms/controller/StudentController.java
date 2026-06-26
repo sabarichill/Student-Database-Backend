@@ -14,10 +14,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/students")
 //CORRECT ✅
-@CrossOrigin(origins = {
- "http://localhost:3000",
- "https://student-database-management-system-mocha.vercel.app"
-})
+@CrossOrigin(origins = "*")
 public class StudentController {
 
     @Autowired

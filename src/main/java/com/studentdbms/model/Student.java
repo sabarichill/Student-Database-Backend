@@ -24,8 +24,8 @@ public class Student {
     private String address;
     private Double cgpa;
 
-    @Column(name = "year_of_study")
-    private Integer yearOfStudy;
+    @Column(name = "yop", length = 4)
+    private Integer yop;
 
     @Column(name = "created_at")
     private LocalDateTime createdAt;
@@ -65,7 +65,7 @@ public class Student {
     public String getPhone()          { return phone; }
     public String getAddress()        { return address; }
     public Double getCgpa()           { return cgpa; }
-    public Integer getYearOfStudy()   { return yearOfStudy; }
+    public Integer getYop() { return yop; }
     public LocalDateTime getCreatedAt() { return createdAt; }
 
     // ── Setters ───────────────────────────────────
@@ -78,7 +78,7 @@ public class Student {
     public void setPhone(String phone)             { this.phone = phone; }
     public void setAddress(String address)         { this.address = address; }
     public void setCgpa(Double cgpa)               { this.cgpa = cgpa; }
-    public void setYearOfStudy(Integer yearOfStudy){ this.yearOfStudy = yearOfStudy; }
+    public void setYop(Integer yop) { this.yop = yop; }
     public void setCreatedAt(LocalDateTime createdAt){ this.createdAt = createdAt; }
 
     @Override

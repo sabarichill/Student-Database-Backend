@@ -20,7 +20,10 @@ public class Student {
     private Integer age;
     private String department;
     private String course;
+
+    @Column(length = 10)
     private String phone;
+
     private String address;
     private Double cgpa;
 
@@ -35,50 +38,33 @@ public class Student {
         this.createdAt = LocalDateTime.now();
     }
 
-    // ── Constructors ──────────────────────────────
+    // Constructors
     public Student() {}
 
-    public Student(Long id, String name, String email, Integer age,
-                   String department, String course, String phone,
-                   String address, Double cgpa, Integer yearOfStudy,
-                   LocalDateTime createdAt) {
-        this.id = id;
-        this.name = name;
-        this.email = email;
-        this.age = age;
-        this.department = department;
-        this.course = course;
-        this.phone = phone;
-        this.address = address;
-        this.cgpa = cgpa;
-        this.yearOfStudy = yearOfStudy;
-        this.createdAt = createdAt;
-    }
+    // Getters
+    public Long getId()                   { return id; }
+    public String getName()               { return name; }
+    public String getEmail()              { return email; }
+    public Integer getAge()               { return age; }
+    public String getDepartment()         { return department; }
+    public String getCourse()             { return course; }
+    public String getPhone()              { return phone; }
+    public String getAddress()            { return address; }
+    public Double getCgpa()               { return cgpa; }
+    public Integer getYop()               { return yop; }
+    public LocalDateTime getCreatedAt()   { return createdAt; }
 
-    // ── Getters ───────────────────────────────────
-    public Long getId()               { return id; }
-    public String getName()           { return name; }
-    public String getEmail()          { return email; }
-    public Integer getAge()           { return age; }
-    public String getDepartment()     { return department; }
-    public String getCourse()         { return course; }
-    public String getPhone()          { return phone; }
-    public String getAddress()        { return address; }
-    public Double getCgpa()           { return cgpa; }
-    public Integer getYop() { return yop; }
-    public LocalDateTime getCreatedAt() { return createdAt; }
-
-    // ── Setters ───────────────────────────────────
-    public void setId(Long id)                     { this.id = id; }
-    public void setName(String name)               { this.name = name; }
-    public void setEmail(String email)             { this.email = email; }
-    public void setAge(Integer age)                { this.age = age; }
-    public void setDepartment(String department)   { this.department = department; }
-    public void setCourse(String course)           { this.course = course; }
-    public void setPhone(String phone)             { this.phone = phone; }
-    public void setAddress(String address)         { this.address = address; }
-    public void setCgpa(Double cgpa)               { this.cgpa = cgpa; }
-    public void setYop(Integer yop) { this.yop = yop; }
+    // Setters
+    public void setId(Long id)                       { this.id = id; }
+    public void setName(String name)                 { this.name = name; }
+    public void setEmail(String email)               { this.email = email; }
+    public void setAge(Integer age)                  { this.age = age; }
+    public void setDepartment(String department)     { this.department = department; }
+    public void setCourse(String course)             { this.course = course; }
+    public void setPhone(String phone)               { this.phone = phone; }
+    public void setAddress(String address)           { this.address = address; }
+    public void setCgpa(Double cgpa)                 { this.cgpa = cgpa; }
+    public void setYop(Integer yop)                  { this.yop = yop; }
     public void setCreatedAt(LocalDateTime createdAt){ this.createdAt = createdAt; }
 
     @Override

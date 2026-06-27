@@ -8,14 +8,10 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 import java.util.Optional;
 
-// JpaRepository gives us free CRUD methods:
-// save(), findAll(), findById(), deleteById(), count(), etc.
-// This is the Collection Framework equivalent in Spring — like a smart List
-
 @Repository
 public interface StudentRepository extends JpaRepository<Student, Long> {
 
-    // Custom query: search by name (case-insensitive)
+    // Search by name
     List<Student> findByNameContainingIgnoreCase(String name);
 
     // Search by department
@@ -24,19 +20,19 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
     // Search by email
     Optional<Student> findByEmail(String email);
 
-    // Search by year of study
-    List<Student> findByYearOfStudy(Integer year);
+    // Search by yop (year of passing)
+    List<Student> findByYop(Integer yop);
 
-    // Custom JPQL query: search across multiple fields
+    // Search across multiple fields
     @Query("SELECT s FROM Student s WHERE " +
            "LOWER(s.name) LIKE LOWER(CONCAT('%', :keyword, '%')) OR " +
            "LOWER(s.department) LIKE LOWER(CONCAT('%', :keyword, '%')) OR " +
            "LOWER(s.course) LIKE LOWER(CONCAT('%', :keyword, '%'))")
     List<Student> searchByKeyword(@Param("keyword") String keyword);
 
-    // Get students sorted by CGPA descending
+    // Sorted by CGPA
     List<Student> findAllByOrderByCgpaDesc();
 
-    // Get students by department sorted by name
+    // By department sorted by name
     List<Student> findByDepartmentOrderByNameAsc(String department);
 }

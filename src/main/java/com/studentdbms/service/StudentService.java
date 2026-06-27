@@ -77,7 +77,7 @@ public class StudentService {
             case "cgpa"        -> Comparator.comparingDouble(s -> s.getCgpa() != null ? s.getCgpa() : 0.0);
             case "age"         -> Comparator.comparingInt(s -> s.getAge() != null ? s.getAge() : 0);
             case "department"  -> Comparator.comparing(Student::getDepartment, String.CASE_INSENSITIVE_ORDER);
-            case "yearOfStudy" -> Comparator.comparingInt(s -> s.getYearOfStudy() != null ? s.getYearOfStudy() : 0);
+            case "yop" -> Comparator.comparingInt(s -> s.getYop() != null ? s.getYop() : 0);
             default            -> Comparator.comparing(Student::getId);
         };
 

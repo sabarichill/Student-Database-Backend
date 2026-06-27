@@ -50,7 +50,7 @@ public class StudentService {
         existing.setPhone(updatedStudent.getPhone());
         existing.setAddress(updatedStudent.getAddress());
         existing.setCgpa(updatedStudent.getCgpa());
-        existing.setYearOfStudy(updatedStudent.getYearOfStudy());
+        existing.setYop(updatedStudent.getYop());
 
         return repository.save(existing);
     }
